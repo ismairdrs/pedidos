@@ -5,7 +5,7 @@ from core.api.v1 import views
 
 
 router = routers.DefaultRouter()
-router.register('pedido', views.PedidoViewSet, basename='pedido')
+router.register('', views.PedidoViewSet, basename='pedido')
 
 urlpatterns = [
     url('', include(router.urls)),
