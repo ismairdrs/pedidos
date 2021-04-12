@@ -9,3 +9,5 @@ class Pedido(models.Model):
     endereco_id = models.UUIDField(default=uuid.uuid4, editable=True)
     pizza_id = models.IntegerField()
     pedido_entregue = models.BooleanField(default=False)
+    criado_em = models.DateTimeField(auto_now_add=True)
+    modificado_em = models.DateTimeField(auto_now=True)

@@ -10,10 +10,10 @@ class PedidoViewSet(viewsets.ModelViewSet):
     queryset = Pedido.objects.all()
     serializer_class = PedidoSerializer
     filter_backends = [django_filters.rest_framework.DjangoFilterBackend]
-    filterset_fields = ['usuario',]
+    filterset_fields = ['usuario_id',]
 
     def get_queryset(self):
-        user = self.request.query_params.get('usuario')
+        user = self.request.query_params.get('usuario_id')
         if user:
             queryset = Pedido.objects.filter(usuario_id=user)
         else:
@@ -23,6 +23,8 @@ class PedidoViewSet(viewsets.ModelViewSet):
 
 
 class PedidoNaoEntregueViewSet(mixins.ListModelMixin,
+                               mixins.RetrieveModelMixin,
+                               mixins.UpdateModelMixin,
                                viewsets.GenericViewSet):
 
     serializer_class = PedidoSerializer
