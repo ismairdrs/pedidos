@@ -26,7 +26,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'channels',
     'corsheaders',
     'rest_framework',
     'django_filters',
@@ -64,7 +63,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'pedidos.wsgi.application'
-ASGI_APPLICATION = 'pedidos.asgi.application'
 
 
 # Database

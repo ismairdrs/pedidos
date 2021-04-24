@@ -1,4 +1,3 @@
-
 import django_filters.rest_framework
 from rest_framework import viewsets, mixins
 from rest_framework.exceptions import ValidationError
@@ -34,9 +33,8 @@ class PedidoNaoEntregueViewSet(mixins.ListModelMixin,
                                mixins.RetrieveModelMixin,
                                mixins.UpdateModelMixin,
                                viewsets.GenericViewSet):
-
     serializer_class = PedidoSerializer
 
     def get_queryset(self):
-        pedidos = Pedido.objects.filter(pedido_entregue=False)
-        return pedidos
+        return Pedido.objects.filter(pedido_entregue=False)
+ 
