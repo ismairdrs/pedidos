@@ -10,6 +10,9 @@ from core.routing import ws_urlpatterns
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'pedidos.settings')
 
 application = ProtocolTypeRouter({
-    'http': get_asgi_application(),
-    'websocket': AuthMiddlewareStack(URLRouter(ws_urlpatterns))
+    'websocket': AuthMiddlewareStack(
+        URLRouter(
+            ws_urlpatterns
+        )
+    )
 })
