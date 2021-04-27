@@ -14,7 +14,7 @@ default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
 
 DATABASES = { 'default': config('DATABASE_URL', default=default_dburl, cast=dburl), }
 
-ALLOWED_HOSTS = ['pizzaria-fasam.herokuapp.com',]
+ALLOWED_HOSTS = ['pizzaria-fasam.herokuapp.com', 'pedidos-api-pizzaria.herokuapp.com']
 
 
 # Application definition
@@ -123,7 +123,7 @@ REST_FRAMEWORK = {
 
 
 CORS_ORIGIN_ALLOW_ALL = True
-CORS_ALLOWED_ORIGINS = ['https://pizzaria-fasam.herokuapp.com', ]
+CORS_ALLOWED_ORIGINS = ['https://pizzaria-fasam.herokuapp.com']
 
 CORS_ALLOW_HEADERS = (
 'accept',
