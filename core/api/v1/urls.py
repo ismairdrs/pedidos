@@ -6,7 +6,7 @@ from core.api.v1.views.websocket import WebsocketAPIView
 
 router = routers.DefaultRouter()
 router.register('restaurante', PedidoNaoEntregueViewSet, basename='pedidos-restaurante')
-router.register('pedido', views.PedidoViewSet, basename='pedido')
+router.register('', views.PedidoViewSet, basename='pedido')
 
 urlpatterns = [
     url(r'websocket/', WebsocketAPIView.as_view(), name='websocket'),
