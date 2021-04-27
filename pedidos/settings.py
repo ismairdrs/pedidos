@@ -137,3 +137,14 @@ CORS_ALLOW_HEADERS = (
 'x-requested-with',
 'Access-Control-Allow-Origin',)
 
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
+
+sentry_sdk.init(
+    dsn="https://ae934de114e14f6c82ef0ccae4aa5392@o586496.ingest.sentry.io/5738227",
+    integrations=[DjangoIntegration()],
+
+    traces_sample_rate=1.0,
+
+    send_default_pii=True
+)
