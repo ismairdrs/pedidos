@@ -21,7 +21,7 @@ class Proxy():
             "Authorization": None
         }
         url = 'http://pizzaria-fasam.herokuapp.com/validar-token/'
-        headers['Authorization'] = f"{request.headers['Authorization']}"
+        headers['Authorization'] = f"JWT {request.headers['Authorization']}"
         result = requests.get(url, headers=headers)
 
         if result.status_code == 200:
