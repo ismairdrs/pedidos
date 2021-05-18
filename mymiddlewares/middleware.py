@@ -11,7 +11,7 @@ class ProxyMiddleware(object):
         if proxy.validar_token(request):
             return self.get_response(request)
         else:
-            raise PermissionDenied('Operação não permitida')
+            raise PermissionDenied(f'Operação não permitida: {request.headers["Authorization"]}')
 
 
 
@@ -24,4 +24,7 @@ class Proxy():
         headers['Authorization'] = f"{request.headers['Authorization']}"
         result = requests.get(url, headers=headers)
 
-        return result.status_code == 200
+        if result.status_code == 200:
+            return True
+        else:
+            return False
