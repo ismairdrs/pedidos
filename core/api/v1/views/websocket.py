@@ -28,10 +28,10 @@ class WebsocketConnection():
         return self.pusher_client
 
     def enviar_status(self):
-        time.sleep(1)
+        time.sleep(3)
         for status in self._STATUS:
             self.pusher_client.trigger('my-channel', 'my-event', {'message': status})
-            time.sleep(1)
+            time.sleep(5)
 
 
 class WebsocketAPIView(APIView):

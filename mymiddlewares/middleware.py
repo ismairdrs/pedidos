@@ -19,7 +19,7 @@ class Proxy():
     def validar_token(self, request):
         headers = {}
         url = 'http://pizzaria-fasam.herokuapp.com/validar-token/'
-        headers['Authorization'] = f'JWT {request.headers["Authorization"]}'
+        headers['Authorization'] = f'{request.headers["Authorization"]}'
         result = requests.get(url, headers=headers)
 
         return result.status_code == 200
