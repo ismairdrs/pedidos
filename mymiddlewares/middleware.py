@@ -17,9 +17,11 @@ class ProxyMiddleware(object):
 
 class Proxy():
     def validar_token(self, request):
-        headers = {}
+        headers = {
+            "Authorization": None
+        }
         url = 'http://pizzaria-fasam.herokuapp.com/validar-token/'
-        headers['Authorization'] = f'{request.headers["Authorization"]}'
+        headers['Authorization'] = f"{request.headers['Authorization']}"
         result = requests.get(url, headers=headers)
 
         return result.status_code == 200
